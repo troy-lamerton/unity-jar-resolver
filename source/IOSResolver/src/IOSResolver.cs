@@ -1745,7 +1745,7 @@ public class IOSResolver : AssetPostprocessor {
                        String.Format("platform :ios, '{0}'\n\n", TargetSdk) +
                        "target '" + TARGET_NAME + "' do\n");
 #if UJR_USE_FRAMEWORKS
-            file.WriteLine("use_framework!");
+            file.WriteLine("use_frameworks!");
 #endif
             foreach(var pod in pods.Values) {
                 file.WriteLine(pod.PodFilePodLine);
