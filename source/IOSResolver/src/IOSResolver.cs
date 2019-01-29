@@ -1744,6 +1744,9 @@ public class IOSResolver : AssetPostprocessor {
                         "install! 'cocoapods', :integrate_targets => false\n" : "") +
                        String.Format("platform :ios, '{0}'\n\n", TargetSdk) +
                        "target '" + TARGET_NAME + "' do\n");
+#if UJR_USE_FRAMEWORKS
+            file.WriteLine("use_framework!");
+#endif
             foreach(var pod in pods.Values) {
                 file.WriteLine(pod.PodFilePodLine);
             }
